@@ -1,0 +1,305 @@
+git config --global user.name "TrKhoi"
+khoi@KN:~/testGit$ git add file1.go
+khoi@KN:~/testGit$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   file1.go
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	file2.go
+
+khoi@KN:~/testGit$ git rm --cached file1.go
+rm 'file1.go'
+khoi@KN:~/testGit$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	file1.go
+	file2.go
+
+nothing added to commit but untracked files present (use "git add" to track)
+khoi@KN:~/testGit$ git add *.go
+khoi@KN:~/testGit$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   file1.go
+	new file:   file2.go
+
+khoi@KN:~/testGit$ git rm --cached file2.go
+rm 'file2.go'
+khoi@KN:~/testGit$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   file1.go
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	file2.go
+
+khoi@KN:~/testGit$ git rm --cached file1.go
+rm 'file1.go'
+khoi@KN:~/testGit$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	file1.go
+	file2.go
+
+nothing added to commit but untracked files present (use "git add" to track)
+khoi@KN:~/testGit$ git add .
+khoi@KN:~/testGit$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   file1.go
+	new file:   file2.go
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   file2.go
+
+khoi@KN:~/testGit$ git addfile2.go
+git: 'addfile2.go' is not a git command. See 'git --help'.
+khoi@KN:~/testGit$ git add .
+khoi@KN:~/testGit$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   file1.go
+	new file:   file2.go
+
+khoi@KN:~/testGit$ git commit -m "add some test flies"
+[master (root-commit) 7e7eaf2] add some test flies
+ 2 files changed, 9 insertions(+)
+ create mode 100644 file1.go
+ create mode 100644 file2.go
+khoi@KN:~/testGit$ touch .gitignore
+khoi@KN:~/testGit$ touch log.txt
+khoi@KN:~/testGit$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   file1.go
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	log.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+khoi@KN:~/testGit$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   file1.go
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	dir1/
+	dir2/
+	log.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+khoi@KN:~/testGit$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   file1.go
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	dir2/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+khoi@KN:~/testGit$ git branch tester
+khoi@KN:~/testGit$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   file1.go
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	dir2/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+khoi@KN:~/testGit$ git commit -m "change"
+On branch master
+Changes not staged for commit:
+	modified:   file1.go
+
+Untracked files:
+	.gitignore
+	dir2/
+
+no changes added to commit
+khoi@KN:~/testGit$ git checkout tester
+M	file1.go
+Switched to branch 'tester'
+khoi@KN:~/testGit$ git status
+On branch tester
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   file1.go
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	dir2/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+khoi@KN:~/testGit$ git statu
+git: 'statu' is not a git command. See 'git --help'.
+
+The most similar commands are
+	status
+	stage
+	stash
+khoi@KN:~/testGit$ git status
+On branch tester
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   file1.go
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	dir1/
+	dir2/
+	log.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+khoi@KN:~/testGit$ git add .
+khoi@KN:~/testGit$ git status
+On branch tester
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   .gitignore
+	new file:   dir1/file4.go
+	new file:   dir2/file3.go
+	modified:   file1.go
+	new file:   log.txt
+
+khoi@KN:~/testGit$ git commit -m "update for tester branch"
+[tester 071e74c] update for tester branch
+ 5 files changed, 7 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 dir1/file4.go
+ create mode 100644 dir2/file3.go
+ create mode 100644 log.txt
+khoi@KN:~/testGit$ git checkput master
+git: 'checkput' is not a git command. See 'git --help'.
+
+The most similar command is
+	checkout
+khoi@KN:~/testGit$ git checkout master
+Switched to branch 'master'
+khoi@KN:~/testGit$ git merge tester
+Updating 7e7eaf2..071e74c
+Fast-forward
+ .gitignore    | 0
+ dir1/file4.go | 0
+ dir2/file3.go | 0
+ file1.go      | 7 +++++++
+ log.txt       | 0
+ 5 files changed, 7 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 dir1/file4.go
+ create mode 100644 dir2/file3.go
+ create mode 100644 log.txt
+khoi@KN:~/testGit$ git remote add origin https://github.com/trkhoi/Gir_Review.git
+khoi@KN:~/testGit$ git push -u origin master
+Username for 'https://github.com': TrKhoi
+Password for 'https://TrKhoi@github.com': 
+To https://github.com/trkhoi/Gir_Review.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/trkhoi/Gir_Review.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+khoi@KN:~/testGit$ git push --help
+khoi@KN:~/testGit$ git push origin master
+Username for 'https://github.com': TrKhoi
+Password for 'https://TrKhoi@github.com': 
+To https://github.com/trkhoi/Gir_Review.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/trkhoi/Gir_Review.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+khoi@KN:~/testGit$ git push -u --mirror origin master
+fatal: --mirror can't be combined with refspecs
+khoi@KN:~/testGit$ git push -u origin master --force
+Username for 'https://github.com': TrKhoi
+Password for 'https://TrKhoi@github.com': 
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 791 bytes | 395.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To https://github.com/trkhoi/Gir_Review.git
+ + 0fe3d0b...071e74c master -> master (forced update)
+Branch 'master' set up to track remote branch 'master' from 'origin'.
