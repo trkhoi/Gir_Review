@@ -303,3 +303,47 @@ Total 9 (delta 0), reused 0 (delta 0)
 To https://github.com/trkhoi/Gir_Review.git
  + 0fe3d0b...071e74c master -> master (forced update)
 Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+
+===================================================================================================
+git clone https://github.com/trkhoi/Gir_Review.git
+Cloning into 'Gir_Review'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 1), reused 12 (delta 1), pack-reused 0
+Unpacking objects: 100% (12/12), done.
+khoi@KN:~/testGitClone$ git pull
+fatal: not a git repository (or any of the parent directories): .git
+khoi@KN:~/testGitClone$ git status
+fatal: not a git repository (or any of the parent directories): .git
+khoi@KN:~/testGitClone$ cd Gir_Review
+khoi@KN:~/testGitClone/Gir_Review$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   dir2/file3.go
+
+no changes added to commit (use "git add" and/or "git commit -a")
+khoi@KN:~/testGitClone/Gir_Review$ git pull
+Already up to date.
+khoi@KN:~/testGitClone/Gir_Review$ git add .
+khoi@KN:~/testGitClone/Gir_Review$ git commit -m "add new file"
+[master 82755db] add new file
+ 1 file changed, 5 insertions(+)
+khoi@KN:~/testGitClone/Gir_Review$ git push origin master
+Username for 'https://github.com': TrKhoi
+Password for 'https://TrKhoi@github.com': 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 318 bytes | 318.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/trkhoi/Gir_Review.git
+   a2447db..82755db  master -> master
